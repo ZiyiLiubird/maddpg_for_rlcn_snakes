@@ -4,11 +4,11 @@ base_dir = Path(__file__).resolve().parent.parent
 sys.path.append(str(base_dir))
 from common import *
 
-HIDDEN_SIZE = 256
+HIDDEN_SIZE = 64
 
 
 class Actor(nn.Module):
-    def __init__(self, obs_dim, act_dim, num_agents, args, output_activation='tanh'):
+    def __init__(self, obs_dim, act_dim, num_agents, args, output_activation='softmax'):
         super().__init__()
         self.obs_dim = obs_dim
         self.act_dim = act_dim
